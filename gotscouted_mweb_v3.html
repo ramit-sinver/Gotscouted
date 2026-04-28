@@ -1,0 +1,337 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+:root{
+  --ink:#572932;
+  --mint:#F0FFE2;
+  --blush:#EEE1E7;
+  --mauve:#C89FB6;
+  --peach:#FFB3AB;
+  --lav:#D7B9E4;
+  --pink:#EC86D0;
+  --loblush:#F7F0F3;
+  --white:#fff;
+}
+body{font-family:'Inter',sans-serif;color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased;background:var(--mint)}
+
+/* NAV */
+.nav{
+  background:var(--ink);
+  display:flex;justify-content:space-between;align-items:center;
+  padding:16px 20px;
+  position:sticky;top:0;z-index:100;
+}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:18px;color:var(--mint);letter-spacing:-0.5px}
+.nav-pill{
+  background:var(--peach);color:var(--ink);
+  border:none;padding:10px 20px;border-radius:999px;
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:800;cursor:pointer;min-height:44px;
+}
+
+/* HERO — mint bg */
+.hero{
+  background:var(--mint);
+  padding:52px 22px 44px;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.blob{position:absolute;border-radius:50%;pointer-events:none}
+.b1{width:200px;height:200px;background:var(--peach);opacity:0.55;top:-60px;right:-60px}
+.b2{width:160px;height:160px;background:var(--lav);opacity:0.5;bottom:-50px;left:-50px}
+.b3{width:100px;height:100px;background:var(--pink);opacity:0.3;top:30px;left:20px}
+
+.live-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--ink);color:var(--mint);
+  font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:7px 16px;border-radius:999px;margin-bottom:30px;position:relative;z-index:2;
+}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--peach);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.3;transform:scale(0.65)}}
+
+.h1{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:54px;line-height:0.92;letter-spacing:-3.5px;
+  margin-bottom:24px;position:relative;z-index:2;
+}
+.h1 .l1{color:var(--ink);display:block}
+.h1 .l2{color:var(--pink);display:block;font-style:italic}
+.h1 .l3{display:block}
+.h1 .l3-chip{
+  background:var(--ink);color:var(--mint);
+  display:inline-block;padding:4px 16px 6px;border-radius:12px;
+}
+
+.sub{
+  font-size:15px;color:var(--ink);line-height:1.7;opacity:0.7;
+  margin-bottom:32px;position:relative;z-index:2;
+}
+
+.cta-big{
+  display:block;width:100%;
+  background:var(--ink);color:var(--mint);
+  border:none;padding:20px;border-radius:18px;
+  font-family:'Syne',sans-serif;font-size:19px;font-weight:800;
+  cursor:pointer;letter-spacing:-0.5px;margin-bottom:12px;
+  min-height:64px;position:relative;z-index:2;
+}
+.cta-note{font-size:12px;color:var(--ink);opacity:0.45;display:block;text-align:center;margin-bottom:36px;position:relative;z-index:2}
+
+.pills{display:flex;gap:10px;position:relative;z-index:2}
+.pill{
+  flex:1;
+  background:var(--white);
+  border:2px solid var(--ink);
+  border-radius:16px;padding:14px 10px;text-align:center;
+  animation:bob 4s ease-in-out infinite;
+}
+.pill:nth-child(2){animation-delay:1.4s}
+.pill:nth-child(3){animation-delay:2.8s}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.pv{font-family:'Syne',sans-serif;font-weight:800;font-size:19px;color:var(--ink);letter-spacing:-1px;display:block}
+.pl{font-size:10px;color:var(--mauve);margin-top:2px;display:block;text-transform:uppercase;letter-spacing:0.8px}
+
+/* TICKER — peach */
+.ticker{background:var(--peach);padding:13px 0;overflow:hidden;white-space:nowrap}
+.ticker-in{display:inline-block;animation:tick 11s linear infinite}
+.ticker-in span{font-family:'Syne',sans-serif;font-weight:800;font-size:12px;color:var(--ink);letter-spacing:0.5px;margin-right:26px}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* HOW — blush */
+.how{background:var(--blush);padding:56px 22px}
+.eye{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--mauve);text-align:center;margin-bottom:12px}
+.sh2{font-family:'Syne',sans-serif;font-weight:800;font-size:34px;letter-spacing:-1.5px;text-align:center;color:var(--ink);margin-bottom:40px;line-height:1.05}
+.sh2 em{color:var(--pink);font-style:italic}
+
+.slist{display:flex;flex-direction:column}
+.srow{display:grid;grid-template-columns:42px 1fr;align-items:stretch}
+.sleft{display:flex;flex-direction:column;align-items:center}
+.sdot{width:36px;height:36px;border-radius:50%;background:var(--ink);color:var(--mint);font-family:'Syne',sans-serif;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sline{width:2px;flex:1;background:var(--mauve);opacity:0.4;margin:5px auto}
+.srow:last-child .sline{display:none}
+.sc{padding:0 0 30px 16px}
+.st{font-family:'Syne',sans-serif;font-weight:700;font-size:16px;color:var(--ink);letter-spacing:-0.3px;margin-bottom:5px;padding-top:4px}
+.sb{font-size:14px;color:var(--ink);opacity:0.6;line-height:1.6}
+.stag{display:inline-block;background:var(--mint);border:1.5px solid var(--ink);color:var(--ink);font-size:10px;font-weight:700;letter-spacing:0.8px;text-transform:uppercase;padding:4px 12px;border-radius:999px;margin-top:10px}
+
+/* CREATOR — lavender */
+.creator{background:var(--lav);padding:52px 22px;text-align:center}
+.ch2{font-family:'Syne',sans-serif;font-weight:800;font-size:32px;letter-spacing:-1.5px;color:var(--ink);line-height:1.05;margin-bottom:14px}
+.ch2 u{text-decoration-style:wavy;text-underline-offset:4px;text-decoration-color:var(--ink)}
+.cb{font-size:15px;color:var(--ink);opacity:0.65;line-height:1.7;margin-bottom:32px}
+
+/* APPLY CARD — ink bg inside lavender section */
+.acard{background:var(--ink);border-radius:24px;padding:32px 22px}
+.aeye{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--mauve);margin-bottom:12px;text-align:center}
+.ah3{font-family:'Syne',sans-serif;font-weight:800;font-size:26px;letter-spacing:-1px;color:var(--white);text-align:center;margin-bottom:8px;line-height:1.1}
+.asub{font-size:14px;color:var(--mauve);text-align:center;margin-bottom:24px;line-height:1.55}
+
+.inp{
+  display:block;width:100%;
+  background:rgba(255,255,255,0.09);
+  border:1.5px solid rgba(255,255,255,0.15);
+  border-radius:12px;padding:15px 16px;
+  font-family:'Inter',sans-serif;font-size:16px;
+  color:var(--white);outline:none;margin-bottom:10px;
+  -webkit-appearance:none;transition:border-color 0.15s;
+}
+.inp::placeholder{color:rgba(200,159,182,0.45)}
+.inp:focus{border-color:var(--peach)}
+
+.nl{font-size:12px;color:var(--mauve);margin-bottom:10px;display:block}
+.ngrid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.nbtn{
+  background:rgba(255,255,255,0.07);border:1.5px solid rgba(255,255,255,0.12);
+  border-radius:12px;padding:12px 8px;
+  font-family:'Inter',sans-serif;font-size:13px;font-weight:500;
+  color:var(--mauve);cursor:pointer;text-align:center;min-height:44px;transition:all 0.15s;
+}
+.nbtn.on{background:var(--peach);border-color:var(--peach);color:var(--ink);font-weight:700}
+
+.sbtn{
+  display:block;width:100%;
+  background:var(--peach);color:var(--ink);
+  border:none;padding:20px;border-radius:14px;
+  font-family:'Syne',sans-serif;font-size:18px;font-weight:800;
+  cursor:pointer;letter-spacing:-0.3px;margin-top:8px;min-height:64px;
+}
+.disc{font-size:11px;color:rgba(200,159,182,0.5);text-align:center;margin-top:14px;line-height:1.5}
+
+.done{display:none;text-align:center;padding:16px 0}
+.done.show{display:block}
+.ring{width:56px;height:56px;border-radius:50%;border:2.5px solid var(--peach);display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.dh{font-family:'Syne',sans-serif;font-weight:800;font-size:24px;color:var(--white);letter-spacing:-0.5px;margin-bottom:10px}
+.ds{font-size:14px;color:var(--mauve);line-height:1.6}
+
+/* PINK BAND */
+.pband{background:var(--pink);padding:44px 22px;text-align:center}
+.pbh{font-family:'Syne',sans-serif;font-weight:800;font-size:28px;color:var(--ink);letter-spacing:-1px;margin-bottom:10px;line-height:1.1}
+.pbs{font-size:14px;color:var(--ink);opacity:0.65;margin-bottom:26px;line-height:1.5}
+.pbc{
+  display:inline-block;
+  background:var(--ink);color:var(--mint);
+  border:none;padding:18px 40px;border-radius:999px;
+  font-family:'Syne',sans-serif;font-size:17px;font-weight:800;
+  cursor:pointer;letter-spacing:-0.3px;min-height:58px;
+}
+
+/* FOOTER */
+.foot{padding:24px 22px;background:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.flogo{font-family:'Syne',sans-serif;font-weight:800;font-size:15px;color:var(--mint)}
+.ftag{font-size:11px;color:var(--mauve);text-align:right;max-width:150px;line-height:1.4}
+</style>
+
+<nav class="nav">
+  <div class="logo">GotScouted</div>
+  <button class="nav-pill" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply free →</button>
+</nav>
+
+<section class="hero">
+  <div class="blob b1"></div>
+  <div class="blob b2"></div>
+  <div class="blob b3"></div>
+
+  <div class="live-tag"><div class="pulse"></div>47 spots left</div>
+
+  <h1 class="h1">
+    <span class="l1">Film it once.</span>
+    <span class="l2">Earn forever.</span>
+    <span class="l3"><span class="l3-chip">Sleep through it.</span></span>
+  </h1>
+
+  <p class="sub">Your face and voice become a digital twin. Brands book you. The twin films it. You approve in 60 seconds and get paid.</p>
+
+  <button class="cta-big" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Get my spot — it's free</button>
+  <span class="cta-note">First 50 creators onboarded free. No catch.</span>
+
+  <div class="pills">
+    <div class="pill"><span class="pv">20 min</span><span class="pl">setup ever</span></div>
+    <div class="pill"><span class="pv">60 sec</span><span class="pl">to approve</span></div>
+    <div class="pill"><span class="pv">0 hrs</span><span class="pl">filming</span></div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-in">
+    <span>NO MORE RING LIGHTS</span><span>★</span>
+    <span>PASSIVE INCOME</span><span>★</span>
+    <span>YOUR FACE YOUR RULES</span><span>★</span>
+    <span>60 SEC APPROVALS</span><span>★</span>
+    <span>GET PAID EVERY DEAL</span><span>★</span>
+    <span>NO MORE RING LIGHTS</span><span>★</span>
+    <span>PASSIVE INCOME</span><span>★</span>
+    <span>YOUR FACE YOUR RULES</span><span>★</span>
+    <span>60 SEC APPROVALS</span><span>★</span>
+    <span>GET PAID EVERY DEAL</span><span>★</span>
+  </div>
+</div>
+
+<section class="how">
+  <p class="eye">How it works</p>
+  <h2 class="sh2">Five steps.<br><em>Endless deals.</em></h2>
+  <div class="slist">
+    <div class="srow">
+      <div class="sleft"><div class="sdot">1</div><div class="sline"></div></div>
+      <div class="sc">
+        <div class="st">Train your twin once</div>
+        <div class="sb">20 minute recording. We build your twin from your face, voice, and the way you actually talk.</div>
+        <div class="stag">Done once. Works forever.</div>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="sleft"><div class="sdot">2</div><div class="sline"></div></div>
+      <div class="sc">
+        <div class="st">Brands book you</div>
+        <div class="sb">We match you with brands already looking for your exact vibe. No cold pitching. No chasing.</div>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="sleft"><div class="sdot">3</div><div class="sline"></div></div>
+      <div class="sc">
+        <div class="st">Your twin films the ad</div>
+        <div class="sb">Generated in your voice and style. No setup, no reshoots, no bad lighting days.</div>
+        <div class="stag">Sounds like you. Looks like you.</div>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="sleft"><div class="sdot">4</div><div class="sline"></div></div>
+      <div class="sc">
+        <div class="st">You approve it</div>
+        <div class="sb">60 seconds on your phone. Nothing goes live without your tap. Full control, always.</div>
+      </div>
+    </div>
+    <div class="srow">
+      <div class="sleft"><div class="sdot">5</div></div>
+      <div class="sc">
+        <div class="st">You get paid</div>
+        <div class="sb">Direct to your account every time a deal closes. Your face is the asset. It should work like one.</div>
+        <div class="stag">No filming. Just income.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="creator">
+  <h2 class="ch2">You already do<br>the <u>hardest part.</u></h2>
+  <p class="cb">Being convincing on camera is a skill most people will never have. GotScouted means you only have to do it once. Your face, your trust, your income.</p>
+
+  <div class="acard" id="apply">
+    <div class="aeye">Apply to join — free</div>
+    <h3 class="ah3">Get your spot<br>before it's gone.</h3>
+    <p class="asub">First 50 creators onboarded free. Takes 60 seconds.</p>
+
+    <div id="fw">
+      <input class="inp" type="text" placeholder="Your name" id="iname" autocomplete="name">
+      <input class="inp" type="text" placeholder="Instagram handle" id="ihandle" autocorrect="off" autocapitalize="none">
+      <input class="inp" type="email" placeholder="Email address" id="iemail" autocomplete="email" inputmode="email">
+      <span class="nl">What kind of content do you make?</span>
+      <div class="ngrid">
+        <button class="nbtn" onclick="tog(this)">Beauty & skincare</button>
+        <button class="nbtn" onclick="tog(this)">Fashion & style</button>
+        <button class="nbtn" onclick="tog(this)">Food & lifestyle</button>
+        <button class="nbtn" onclick="tog(this)">Tech & gadgets</button>
+        <button class="nbtn" onclick="tog(this)">Fitness</button>
+        <button class="nbtn" onclick="tog(this)">Other</button>
+      </div>
+      <button class="sbtn" onclick="sub()">Claim my free spot →</button>
+      <p class="disc">No credit card. No catch. Just the first step to passive income from your face.</p>
+    </div>
+
+    <div class="done" id="done">
+      <div class="ring">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 12l4 4L19 7" stroke="#FFB3AB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="dh">You're on the list.</div>
+      <div class="ds">We'll be in touch within 48 hours to set up your twin. Tell a creator friend — they'll thank you.</div>
+    </div>
+  </div>
+</section>
+
+<div class="pband">
+  <div class="pbh">Your face is an asset.<br>Start charging for it.</div>
+  <p class="pbs">Assets don't clock out. Neither should yours.</p>
+  <button class="pbc" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">Apply free — 47 spots left</button>
+</div>
+
+<footer class="foot">
+  <div class="flogo">GotScouted</div>
+  <div class="ftag">Your face. Their brief. Your income.</div>
+</footer>
+
+<script>
+function tog(b){b.classList.toggle('on')}
+function sub(){
+  var n=document.getElementById('iname').value.trim();
+  var e=document.getElementById('iemail').value.trim();
+  var h=document.getElementById('ihandle').value.trim();
+  if(!n)document.getElementById('iname').style.borderColor='rgba(255,179,171,0.8)';
+  if(!e)document.getElementById('iemail').style.borderColor='rgba(255,179,171,0.8)';
+  if(!n||!e)return;
+  document.getElementById('fw').style.display='none';
+  document.getElementById('done').classList.add('show');
+  var ni=[];
+  document.querySelectorAll('.nbtn.on').forEach(function(b){ni.push(b.textContent)});
+  sendPrompt('Applied to GotScouted. Name: '+n+', handle: '+(h||'not given')+', email: '+e+', niche: '+(ni.length?ni.join(', '):'not selected')+'. What happens next?');
+}
+</script>
